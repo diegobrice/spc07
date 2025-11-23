@@ -1,0 +1,5 @@
+{
+  "name": "Mi Fixture Fulbito",
+  "description": "Aplicación para gestionar y visualizar el calendario de partidos de fulbito, con vistas de calendario y lista para la temporada 2025-2026.",
+  "requestFramePermissions": []
+}
