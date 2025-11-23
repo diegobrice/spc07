@@ -35,11 +35,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ matches }) => {
   const startDate = startOfWeek(monthStart, { weekStartsOn: 1 }); 
   const endDate = endOfWeek(monthEnd, { weekStartsOn: 1 });
 
-  const dateFormat = "d";
-  const days = eachDayOfInterval({
-    start: startDate,
-    end: endDate
-  });
+  const days = eachDayOfInterval({ start: startDate, end: endDate });
 
   const daysOfWeek = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
 
@@ -106,7 +102,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ matches }) => {
                 {/* Date Number */}
                 <div className="flex justify-end sm:justify-end mb-1">
                   <span className={dayNumberClass}>
-                    {format(day, dateFormat)}
+                    {format(day, 'd')}
                   </span>
                 </div>
                 

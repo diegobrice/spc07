@@ -1,6 +1,6 @@
 import React from 'react';
 import { Match } from '../types';
-import { format, parseISO, differenceInCalendarDays } from 'date-fns';
+import { format, parse, differenceInCalendarDays } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { Calendar, Clock, MapPin, Trophy, Shield } from 'lucide-react';
 
@@ -11,7 +11,11 @@ interface ListViewProps {
 export const ListView: React.FC<ListViewProps> = ({ matches }) => {
   // Sort matches by date
   const sortedMatches = [...matches].sort((a, b) => {
-    return new Date(a.date + 'T' + a.time).getTime() - new Date(b.date + 'T' + b.time).getTime();
+    // If time contains a colon, it's likely a valid time. Otherwise (e.g. "POR DEFINIR"), treat as end of day or 00:00.
+    // We use a dummy time '00:00' for invalid strings to ensure they don't produce NaN.
+    const timeA = a.time.includes(':') ? a.time : '00:00';
+    const timeB = b.time.includes(':') ? b.time : '00:00';
+    return new Date(a.date + 'T' + timeA).getTime() - new Date(b.date + 'T' + timeB).getTime();
   });
 
   if (sortedMatches.length === 0) {
@@ -29,7 +33,8 @@ export const ListView: React.FC<ListViewProps> = ({ matches }) => {
   return (
     <div className="space-y-4">
       {sortedMatches.map((match) => {
-        const dateObj = parseISO(match.date);
+        // Parse date YYYY-MM-DD
+        const dateObj = parse(match.date, 'yyyy-MM-dd', new Date());
         const daysRemaining = differenceInCalendarDays(dateObj, new Date());
         
         let daysText = '';

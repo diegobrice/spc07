@@ -16,6 +16,9 @@ const INITIAL_MATCHES: Match[] = [
   { id: '7', date: '2025-12-29', time: '22:40', opponent: 'XAVIER 2011', venue: 'CANCHA 2' },
   { id: '8', date: '2026-01-07', time: '22:15', opponent: 'XAVIER 2004', venue: 'CANCHA 2' },
   { id: '9', date: '2026-01-12', time: '23:00', opponent: 'GONZAGA 2006', venue: 'CANCHA 2' },
+  { id: '10', date: '2026-01-16', time: 'POR DEFINIR', opponent: 'CUARTOS', venue: 'POR DEFINIR' },
+  { id: '11', date: '2026-01-19', time: 'POR DEFINIR', opponent: 'SEMIFINAL', venue: 'POR DEFINIR' },
+  { id: '12', date: '2026-01-23', time: 'POR DEFINIR', opponent: 'FINAL', venue: 'POR DEFINIR' },
 ];
 
 const App: React.FC = () => {
