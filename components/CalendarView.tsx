@@ -118,20 +118,26 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ matches }) => {
 
                 {/* Match Info */}
                 <div className="flex-1 flex flex-col gap-1 w-full">
-                  {dayMatches.map(match => (
-                    <div
-                      key={match.id}
-                      className="bg-dark-900/90 border border-brand-teal/30 rounded-lg p-1.5 sm:p-2 shadow-lg shadow-black/10 hover:border-brand-teal transition-colors group"
-                    >
-                      <p className="text-[9px] sm:text-[10px] font-bold text-brand-teal truncate leading-tight mb-0.5 uppercase tracking-wide">
-                        {match.opponent}
-                      </p>
-                      <div className="flex items-center gap-1 text-[9px] sm:text-[10px] text-slate-400 group-hover:text-slate-300">
-                        <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-brand-green/70" />
-                        <span>{match.time}</span>
+                  {dayMatches.map(match => {
+                    const isFinished = match.homeScore !== undefined && match.awayScore !== undefined;
+
+                    return (
+                      <div
+                        key={match.id}
+                        className="bg-dark-900/90 border border-brand-teal/30 rounded-lg p-1.5 sm:p-2 shadow-lg shadow-black/10 hover:border-brand-teal transition-colors group"
+                      >
+                        <p className="text-[9px] sm:text-[10px] font-bold text-brand-teal truncate leading-tight mb-0.5 uppercase tracking-wide">
+                          {match.opponent}
+                        </p>
+                        <div className="flex items-center gap-1 text-[9px] sm:text-[10px] text-slate-400 group-hover:text-slate-300">
+                          {!isFinished && <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-brand-green/70" />}
+                          <span className={isFinished ? 'font-black text-white' : ''}>
+                            {isFinished ? `${match.homeScore} - ${match.awayScore}` : match.time}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             );
