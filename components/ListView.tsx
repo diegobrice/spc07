@@ -36,73 +36,83 @@ export const ListView: React.FC<ListViewProps> = ({ matches }) => {
         // Parse date YYYY-MM-DD
         const dateObj = parse(match.date, 'yyyy-MM-dd', new Date());
         const daysRemaining = differenceInCalendarDays(dateObj, new Date());
-        
+
         let daysText = '';
         let badgeClass = '';
 
         if (daysRemaining < 0) {
-            daysText = 'Finalizado';
-            badgeClass = 'text-slate-500 bg-slate-500/10 border-slate-500/20';
+          daysText = 'Finalizado';
+          badgeClass = 'text-slate-500 bg-slate-500/10 border-slate-500/20';
         } else if (daysRemaining === 0) {
-            daysText = '¡JUEGA HOY!';
-            badgeClass = 'text-brand-teal bg-brand-teal/10 border-brand-teal/30 animate-pulse';
+          daysText = '¡JUEGA HOY!';
+          badgeClass = 'text-brand-teal bg-brand-teal/10 border-brand-teal/30 animate-pulse';
         } else if (daysRemaining === 1) {
-            daysText = 'MAÑANA';
-            badgeClass = 'text-brand-green bg-brand-green/10 border-brand-green/30';
+          daysText = 'MAÑANA';
+          badgeClass = 'text-brand-green bg-brand-green/10 border-brand-green/30';
         } else {
-            daysText = `Faltan ${daysRemaining} días`;
-            badgeClass = 'text-brand-teal bg-brand-teal/10 border-brand-teal/20';
+          daysText = `Faltan ${daysRemaining} días`;
+          badgeClass = 'text-brand-teal bg-brand-teal/10 border-brand-teal/20';
         }
 
         return (
           <div key={match.id} className="relative group overflow-hidden bg-dark-800 rounded-3xl border border-dark-700 hover:border-dark-600 transition-all duration-300 shadow-lg shadow-black/20">
             {/* Background Gradient Effect */}
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-brand-teal/5 rounded-full blur-3xl group-hover:bg-brand-teal/10 transition-all duration-500"></div>
-            
+
             <div className="relative p-5">
               {/* Header: Date & Status */}
               <div className="flex justify-between items-center mb-6">
-                 <div className="flex items-center space-x-2 text-slate-400 text-xs font-semibold uppercase tracking-wider">
+                <div className="flex items-center space-x-2 text-slate-400 text-xs font-semibold uppercase tracking-wider">
                   <Calendar className="w-3.5 h-3.5" />
                   <span>{format(dateObj, 'EEE d MMM', { locale: es })}</span>
                 </div>
                 <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border ${badgeClass}`}>
-                    {daysText}
+                  {daysText}
                 </span>
               </div>
-              
+
               {/* Main Match Content */}
               <div className="flex items-center justify-between mb-6">
                 {/* My Team */}
                 <div className="flex-1 flex flex-col items-start">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-green flex items-center justify-center text-dark-900 shadow-lg shadow-brand-teal/20 mb-2">
-                    <Shield className="w-6 h-6 fill-current" />
+                  <div className="w-12 h-12 rounded-2xl bg-dark-900 flex items-center justify-center mb-2 overflow-hidden">
+                    <img src="/images/spclogo.png" alt="Claver 2007 Logo" className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-white font-bold text-lg leading-tight">CLAVER<br/><span className="text-brand-teal">2007</span></span>
+                  <span className="text-white font-bold text-lg leading-tight">CLAVER 2007</span>
                 </div>
 
-                {/* VS / Time */}
+                {/* VS / Time / Score */}
                 <div className="px-4 flex flex-col items-center">
-                   <div className="text-2xl font-black text-slate-700 italic">VS</div>
-                   <div className="mt-1 flex items-center gap-1.5 text-xs font-medium text-slate-300 bg-dark-900/50 px-2.5 py-1 rounded-lg border border-white/5">
-                      <Clock className="w-3 h-3 text-brand-teal" />
-                      {match.time}
-                   </div>
+                  {match.homeScore !== undefined && match.awayScore !== undefined ? (
+                    <div className="flex flex-col items-center gap-1">
+                      <div className="text-3xl font-black text-white tracking-widest">
+                        {match.homeScore} - {match.awayScore}
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="text-2xl font-black text-slate-700 italic">VS</div>
+                      <div className="mt-1 flex items-center gap-1.5 text-xs font-medium text-slate-300 bg-dark-900/50 px-2.5 py-1 rounded-lg border border-white/5">
+                        <Clock className="w-3 h-3 text-brand-teal" />
+                        {match.time}
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* Opponent */}
                 <div className="flex-1 flex flex-col items-end text-right">
-                   <div className="w-12 h-12 rounded-2xl bg-dark-700 flex items-center justify-center text-slate-400 mb-2 border border-white/5">
+                  <div className="w-12 h-12 rounded-2xl bg-dark-700 flex items-center justify-center text-slate-400 mb-2 border border-white/5">
                     <Shield className="w-6 h-6" />
                   </div>
                   <span className="text-white font-bold text-lg leading-tight break-words w-full">{match.opponent}</span>
                 </div>
               </div>
-              
+
               {/* Footer: Venue */}
               <div className="flex items-center gap-2 text-xs text-slate-400 border-t border-white/5 pt-4">
-                 <MapPin className="w-3.5 h-3.5 text-brand-green" />
-                 <span className="font-medium tracking-wide">{match.venue}</span>
+                <MapPin className="w-3.5 h-3.5 text-brand-green" />
+                <span className="font-medium tracking-wide">{match.venue}</span>
               </div>
 
             </div>

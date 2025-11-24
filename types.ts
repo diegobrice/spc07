@@ -4,6 +4,8 @@ export interface Match {
   time: string; // HH:mm
   opponent: string;
   venue: string;
+  homeScore?: number;
+  awayScore?: number;
 }
 
 export type ViewMode = 'calendar' | 'list';
