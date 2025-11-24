@@ -17,7 +17,7 @@ const App: React.FC = () => {
 
       {/* Header */}
       <header className="sticky top-0 z-40 bg-dark-900/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-xl mx-auto px-4 sm:px-6">
+        <div className="max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between h-20 items-center">
 
             <div className="flex items-center gap-3">
@@ -41,7 +41,7 @@ const App: React.FC = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-xl mx-auto w-full px-4 py-6 z-10">
+      <main className="flex-1 max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto w-full px-4 py-6 z-10">
 
         {/* Navigation Switcher */}
         <div className="bg-dark-800 p-1 rounded-2xl mb-8 flex border border-dark-700">
@@ -77,7 +77,7 @@ const App: React.FC = () => {
 
       {/* Footer */}
       <footer className="mt-auto border-t border-white/5 py-8">
-        <div className="max-w-xl mx-auto px-4 text-center">
+        <div className="max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto px-4 text-center">
           <p className="text-xs text-slate-600 font-medium">
             CLAVER 2007 • Developed for Champions
           </p>

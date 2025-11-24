@@ -61,7 +61,7 @@ export const ListView: React.FC<ListViewProps> = ({ matches }) => {
 
             <div className="relative p-5">
               {/* Header: Date & Status */}
-              <div className="flex justify-between items-center mb-6">
+              <div className="flex justify-between items-center mb-3">
                 <div className="flex items-center space-x-2 text-slate-400 text-xs font-semibold uppercase tracking-wider">
                   <Calendar className="w-3.5 h-3.5" />
                   <span>{format(dateObj, 'EEE d MMM', { locale: es })}</span>
@@ -72,7 +72,7 @@ export const ListView: React.FC<ListViewProps> = ({ matches }) => {
               </div>
 
               {/* Main Match Content */}
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-3">
                 {/* My Team */}
                 <div className="flex-1 flex flex-col items-start">
                   <div className="w-12 h-12 rounded-2xl bg-dark-900 flex items-center justify-center mb-2 overflow-hidden">
@@ -110,7 +110,7 @@ export const ListView: React.FC<ListViewProps> = ({ matches }) => {
               </div>
 
               {/* Footer: Venue */}
-              <div className="flex items-center gap-2 text-xs text-slate-400 border-t border-white/5 pt-4">
+              <div className="flex items-center gap-2 text-xs text-slate-400 border-t border-white/5 pt-3">
                 <MapPin className="w-3.5 h-3.5 text-brand-green" />
                 <span className="font-medium tracking-wide">{match.venue}</span>
               </div>
