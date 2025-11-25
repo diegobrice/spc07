@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, Calendar, Clock, MapPin, Shield } from 'lucide-react';
+import { TeamLogo } from './TeamLogo';
 import { Match } from '../types';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
@@ -76,10 +77,10 @@ export const MatchDetailsModal: React.FC<MatchDetailsModalProps> = ({ isOpen, on
                                         <div className="flex items-center justify-between mb-4">
                                             {/* Home */}
                                             <div className="flex flex-col items-center gap-2 w-1/3">
-                                                <div className="w-12 h-12 rounded-xl bg-dark-900 flex items-center justify-center overflow-hidden">
-                                                    <img src="/images/spclogo.png" alt="Claver 2007 Logo" className="w-full h-full object-cover" />
-                                                </div>
-                                                <span className="text-xs font-bold text-white text-center leading-tight">CLAVER<br /><span className="text-brand-teal">2007</span></span>
+                                                <TeamLogo team={match.homeTeam} className="w-12 h-12" />
+                                                <span className={`text-xs font-bold text-center leading-tight ${match.homeTeam === 'CLAVER 2007' ? 'text-brand-teal' : 'text-white'}`}>
+                                                    {match.homeTeam}
+                                                </span>
                                             </div>
 
                                             {/* Score / VS */}
@@ -97,10 +98,10 @@ export const MatchDetailsModal: React.FC<MatchDetailsModalProps> = ({ isOpen, on
 
                                             {/* Away */}
                                             <div className="flex flex-col items-center gap-2 w-1/3">
-                                                <div className="w-12 h-12 rounded-xl bg-dark-700 flex items-center justify-center text-slate-500 border border-white/5">
-                                                    <Shield className="w-6 h-6" />
-                                                </div>
-                                                <span className="text-xs font-bold text-white text-center leading-tight break-words w-full">{match.opponent}</span>
+                                                <TeamLogo team={match.awayTeam} className="w-12 h-12" />
+                                                <span className={`text-xs font-bold text-center leading-tight break-words w-full ${match.awayTeam === 'CLAVER 2007' ? 'text-brand-teal' : 'text-white'}`}>
+                                                    {match.awayTeam}
+                                                </span>
                                             </div>
                                         </div>
 

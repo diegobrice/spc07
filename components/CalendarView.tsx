@@ -120,14 +120,18 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ matches }) => {
                 <div className="flex-1 flex flex-col gap-1 w-full">
                   {dayMatches.map(match => {
                     const isFinished = match.homeScore !== undefined && match.awayScore !== undefined;
+                    const isMyMatch = match.homeTeam === 'CLAVER 2007' || match.awayTeam === 'CLAVER 2007';
+                    const displayText = isMyMatch
+                      ? (match.homeTeam === 'CLAVER 2007' ? match.awayTeam : match.homeTeam)
+                      : `${match.homeTeam.substring(0, 3)} vs ${match.awayTeam.substring(0, 3)}`;
 
                     return (
                       <div
                         key={match.id}
-                        className="bg-dark-900/90 border border-brand-teal/30 rounded-lg p-1.5 sm:p-2 shadow-lg shadow-black/10 hover:border-brand-teal transition-colors group"
+                        className={`bg-dark-900/90 border rounded-lg p-1.5 sm:p-2 shadow-lg shadow-black/10 transition-colors group ${isMyMatch ? 'border-brand-teal/30 hover:border-brand-teal' : 'border-dark-600 hover:border-dark-500'}`}
                       >
-                        <p className="text-[9px] sm:text-[10px] font-bold text-brand-teal truncate leading-tight mb-0.5 uppercase tracking-wide">
-                          {match.opponent}
+                        <p className={`text-[9px] sm:text-[10px] font-bold truncate leading-tight mb-0.5 uppercase tracking-wide ${isMyMatch ? 'text-brand-teal' : 'text-slate-400'}`}>
+                          {displayText}
                         </p>
                         <div className="flex items-center gap-1 text-[9px] sm:text-[10px] text-slate-400 group-hover:text-slate-300">
                           {!isFinished && <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-brand-green/70" />}

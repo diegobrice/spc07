@@ -3,6 +3,7 @@ import { Match } from '../types';
 import { format, parse, differenceInCalendarDays } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { Calendar, Clock, MapPin, Trophy, Shield } from 'lucide-react';
+import { TeamLogo } from './TeamLogo';
 
 interface ListViewProps {
   matches: Match[];
@@ -73,12 +74,12 @@ export const ListView: React.FC<ListViewProps> = ({ matches }) => {
 
               {/* Main Match Content */}
               <div className="flex items-center justify-between mb-3">
-                {/* My Team */}
+                {/* Home Team */}
                 <div className="flex-1 flex flex-col items-start">
-                  <div className="w-12 h-12 rounded-2xl bg-dark-900 flex items-center justify-center mb-2 overflow-hidden">
-                    <img src="/images/spclogo.png" alt="Claver 2007 Logo" className="w-full h-full object-cover" />
-                  </div>
-                  <span className="text-white font-bold text-lg leading-tight">CLAVER 2007</span>
+                  <TeamLogo team={match.homeTeam} className="w-12 h-12 mb-2" />
+                  <span className={`font-bold text-lg leading-tight ${match.homeTeam === 'CLAVER 2007' ? 'text-brand-teal' : 'text-white'}`}>
+                    {match.homeTeam}
+                  </span>
                 </div>
 
                 {/* VS / Time / Score */}
@@ -100,12 +101,12 @@ export const ListView: React.FC<ListViewProps> = ({ matches }) => {
                   )}
                 </div>
 
-                {/* Opponent */}
+                {/* Away Team */}
                 <div className="flex-1 flex flex-col items-end text-right">
-                  <div className="w-12 h-12 rounded-2xl bg-dark-700 flex items-center justify-center text-slate-400 mb-2 border border-white/5">
-                    <Shield className="w-6 h-6" />
-                  </div>
-                  <span className="text-white font-bold text-lg leading-tight break-words w-full">{match.opponent}</span>
+                  <TeamLogo team={match.awayTeam} className="w-12 h-12 mb-2" />
+                  <span className={`font-bold text-lg leading-tight break-words w-full ${match.awayTeam === 'CLAVER 2007' ? 'text-brand-teal' : 'text-white'}`}>
+                    {match.awayTeam}
+                  </span>
                 </div>
               </div>
 
