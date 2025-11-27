@@ -15,11 +15,11 @@ export const TEAMS = [
 
 export const ALL_MATCHES: Match[] = [
     // FECHA 1
-    { id: '1', date: '2025-11-25', time: '20:00', opponent: 'LOYOLA 2003', homeTeam: 'BORJA 2012', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 2', round: 'FECHA 1' },
-    { id: '2', date: '2025-11-25', time: '20:45', opponent: 'XAVIER 2004', homeTeam: 'XAVIER 2011', awayTeam: 'XAVIER 2004', venue: 'CANCHA 2', round: 'FECHA 1' },
-    { id: '3', date: '2025-11-25', time: '21:30', opponent: 'ARRUPE 2005', homeTeam: 'KOTSKA 2010', awayTeam: 'ARRUPE 2005', venue: 'CANCHA 2', round: 'FECHA 1' },
-    { id: '4', date: '2025-11-25', time: '22:15', opponent: 'GONZAGA 2006', homeTeam: 'HURTADO 2009', awayTeam: 'GONZAGA 2006', venue: 'CANCHA 2', round: 'FECHA 1' },
-    { id: '5', date: '2025-11-25', time: '22:15', opponent: 'BERCHMANS 2008', homeTeam: 'BERCHMANS 2008', awayTeam: 'CLAVER 2007', venue: 'CANCHA 1', round: 'FECHA 1' },
+    { id: '1', date: '2025-11-25', time: '20:00', opponent: 'LOYOLA 2003', homeTeam: 'BORJA 2012', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 2', homeScore: 2, awayScore: 1, round: 'FECHA 1' },
+    { id: '2', date: '2025-11-25', time: '20:45', opponent: 'XAVIER 2004', homeTeam: 'XAVIER 2011', awayTeam: 'XAVIER 2004', venue: 'CANCHA 2', homeScore: 1, awayScore: 1, round: 'FECHA 1' },
+    { id: '3', date: '2025-11-25', time: '21:30', opponent: 'ARRUPE 2005', homeTeam: 'KOTSKA 2010', awayTeam: 'ARRUPE 2005', venue: 'CANCHA 2', homeScore: 2, awayScore: 3, round: 'FECHA 1' },
+    { id: '4', date: '2025-11-25', time: '22:15', opponent: 'GONZAGA 2006', homeTeam: 'HURTADO 2009', awayTeam: 'GONZAGA 2006', venue: 'CANCHA 2', homeScore: 2, awayScore: 0, round: 'FECHA 1' },
+    { id: '5', date: '2025-11-25', time: '22:15', opponent: 'BERCHMANS 2008', homeTeam: 'BERCHMANS 2008', awayTeam: 'CLAVER 2007', venue: 'CANCHA 1', homeScore: 3, awayScore: 2, round: 'FECHA 1' },
 
     // FECHA 2
     { id: '6', date: '2025-12-01', time: '22:40', opponent: 'BERCHMANS 2008', homeTeam: 'HURTADO 2009', awayTeam: 'BERCHMANS 2008', venue: 'CANCHA 1', round: 'FECHA 2' },

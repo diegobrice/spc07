@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Calendar as CalendarIcon, List, Trophy, LayoutGrid } from 'lucide-react';
-import { Match, ViewMode } from './types';
+import { Match, ViewMode, MyMatchesMode } from './types';
 import { CalendarView } from './components/CalendarView';
 import { ListView } from './components/ListView';
 import { FixtureView } from './components/FixtureView';
+import { StandingsView } from './components/StandingsView';
 import { INITIAL_MATCHES, ALL_MATCHES } from './data';
 
 const App: React.FC = () => {
   const [view, setView] = useState<ViewMode>('fixture');
+  const [myMatchesView, setMyMatchesView] = useState<MyMatchesMode>('list');
   const [myMatches] = useState<Match[]>(INITIAL_MATCHES);
   const [allMatches] = useState<Match[]>(ALL_MATCHES);
 
@@ -48,6 +50,16 @@ const App: React.FC = () => {
         {/* Navigation Switcher */}
         <div className="bg-dark-800 p-1 rounded-2xl mb-8 flex border border-dark-700 overflow-x-auto">
           <button
+            onClick={() => setView('standings')}
+            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap ${view === 'standings'
+              ? 'bg-dark-700 text-white shadow-sm'
+              : 'text-slate-500 hover:text-slate-300'
+              }`}
+          >
+            <Trophy className="w-4 h-4" />
+            Tabla
+          </button>
+          <button
             onClick={() => setView('fixture')}
             className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap ${view === 'fixture'
               ? 'bg-dark-700 text-white shadow-sm'
@@ -58,8 +70,8 @@ const App: React.FC = () => {
             Fixture
           </button>
           <button
-            onClick={() => setView('list')}
-            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap ${view === 'list'
+            onClick={() => setView('my_matches')}
+            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap ${view === 'my_matches'
               ? 'bg-dark-700 text-white shadow-sm'
               : 'text-slate-500 hover:text-slate-300'
               }`}
@@ -67,30 +79,50 @@ const App: React.FC = () => {
             <List className="w-4 h-4" />
             Mis partidos
           </button>
-          <button
-            onClick={() => setView('calendar')}
-            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap ${view === 'calendar'
-              ? 'bg-dark-700 text-white shadow-sm'
-              : 'text-slate-500 hover:text-slate-300'
-              }`}
-          >
-            <CalendarIcon className="w-4 h-4" />
-            Calendario
-          </button>
         </div>
 
-        {view === 'calendar' ? (
-          <CalendarView matches={[
-            ...myMatches,
-            ...allMatches.filter(m => ['CUARTOS DE FINAL', 'SEMIFINAL', 'FINAL'].includes(m.round || ''))
-              .filter((match, index, self) =>
-                index === self.findIndex((t) => t.date === match.date)
-              )
-          ]} />
+        {view === 'my_matches' && (
+          <div className="bg-dark-800/50 p-1 rounded-xl mb-6 flex border border-dark-700/50 w-full max-w-xs mx-auto">
+            <button
+              onClick={() => setMyMatchesView('list')}
+              className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-3 rounded-lg text-xs font-semibold transition-all duration-200 ${myMatchesView === 'list'
+                ? 'bg-brand-teal text-dark-900 shadow-sm'
+                : 'text-slate-400 hover:text-slate-200'
+                }`}
+            >
+              <List className="w-3 h-3" />
+              Lista
+            </button>
+            <button
+              onClick={() => setMyMatchesView('calendar')}
+              className={`flex-1 flex items-center justify-center gap-2 py-1.5 px-3 rounded-lg text-xs font-semibold transition-all duration-200 ${myMatchesView === 'calendar'
+                ? 'bg-brand-teal text-dark-900 shadow-sm'
+                : 'text-slate-400 hover:text-slate-200'
+                }`}
+            >
+              <CalendarIcon className="w-3 h-3" />
+              Calendario
+            </button>
+          </div>
+        )}
+
+        {view === 'standings' ? (
+          <StandingsView matches={allMatches} />
         ) : view === 'fixture' ? (
           <FixtureView matches={allMatches} />
         ) : (
-          <ListView matches={myMatches} />
+          // My Matches View
+          myMatchesView === 'calendar' ? (
+            <CalendarView matches={[
+              ...myMatches,
+              ...allMatches.filter(m => ['CUARTOS DE FINAL', 'SEMIFINAL', 'FINAL'].includes(m.round || ''))
+                .filter((match, index, self) =>
+                  index === self.findIndex((t) => t.date === match.date)
+                )
+            ]} />
+          ) : (
+            <ListView matches={myMatches} />
+          )
         )}
 
       </main>
