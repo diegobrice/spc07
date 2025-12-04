@@ -35,12 +35,19 @@ export const FixtureView: React.FC<FixtureViewProps> = ({ matches }) => {
         return getOrder(a) - getOrder(b);
     });
 
-    // Initialize with the first round or the closest upcoming round
+    // Initialize with the first round that has unplayed matches (no score)
     const [selectedRound, setSelectedRound] = useState<string>(() => {
         if (rounds.length === 0) return '';
-        // Logic to find current round based on date could be added here, 
-        // for now default to first or keep simple logic
-        return rounds[0];
+
+        // Find the first round that has at least one match without a score
+        const nextRound = rounds.find(round => {
+            const roundMatches = matchesByRound[round];
+            return roundMatches.some(m => m.homeScore === undefined || m.awayScore === undefined);
+        });
+
+        // If all rounds are played, default to the last one (or the first one if preferred, but usually last played is better context)
+        // If a next round is found, use it.
+        return nextRound || rounds[rounds.length - 1];
     });
 
     const currentMatches = matchesByRound[selectedRound] || [];
