@@ -29,11 +29,11 @@ export const ALL_MATCHES: Match[] = [
     { id: '10', date: '2025-12-02', time: '23:10', opponent: 'KOTSKA 2010', homeTeam: 'KOTSKA 2010', awayTeam: 'CLAVER 2007', venue: 'CANCHA 2', homeScore: 6, awayScore: 2, round: 'FECHA 2' },
 
     // FECHA 3
-    { id: '11', date: '2025-12-12', time: '20:00', opponent: 'LOYOLA 2003', homeTeam: 'ARRUPE 2005', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 1', round: 'FECHA 3' },
-    { id: '12', date: '2025-12-12', time: '20:45', opponent: 'GONZAGA 2006', homeTeam: 'XAVIER 2004', awayTeam: 'GONZAGA 2006', venue: 'CANCHA 1', round: 'FECHA 3' },
-    { id: '13', date: '2025-12-12', time: '21:30', opponent: 'BORJA 2012', homeTeam: 'BORJA 2012', awayTeam: 'CLAVER 2007', venue: 'CANCHA 1', round: 'FECHA 3' },
-    { id: '14', date: '2025-12-12', time: '22:15', opponent: 'BERCHMANS 2008', homeTeam: 'XAVIER 2011', awayTeam: 'BERCHMANS 2008', venue: 'CANCHA 1', round: 'FECHA 3' },
-    { id: '15', date: '2025-12-12', time: '22:45', opponent: 'HURTADO 2009', homeTeam: 'KOTSKA 2010', awayTeam: 'HURTADO 2009', venue: 'CANCHA 1', round: 'FECHA 3' },
+    { id: '11', date: '2025-12-12', time: '20:00', opponent: 'LOYOLA 2003', homeTeam: 'ARRUPE 2005', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 1', homeScore: 5, awayScore: 1, round: 'FECHA 3' },
+    { id: '12', date: '2025-12-12', time: '20:45', opponent: 'GONZAGA 2006', homeTeam: 'XAVIER 2004', awayTeam: 'GONZAGA 2006', venue: 'CANCHA 1', homeScore: 4, awayScore: 3, round: 'FECHA 3' },
+    { id: '13', date: '2025-12-12', time: '21:30', opponent: 'BORJA 2012', homeTeam: 'BORJA 2012', awayTeam: 'CLAVER 2007', venue: 'CANCHA 1', homeScore: 1, awayScore: 3, round: 'FECHA 3' },
+    { id: '14', date: '2025-12-12', time: '22:15', opponent: 'BERCHMANS 2008', homeTeam: 'XAVIER 2011', awayTeam: 'BERCHMANS 2008', venue: 'CANCHA 1', homeScore: 3, awayScore: 3, round: 'FECHA 3' },
+    { id: '15', date: '2025-12-12', time: '22:45', opponent: 'HURTADO 2009', homeTeam: 'KOTSKA 2010', awayTeam: 'HURTADO 2009', venue: 'CANCHA 1', homeScore: 1, awayScore: 3, round: 'FECHA 3' },
 
     // FECHA 4
     { id: '16', date: '2025-12-15', time: '21:40', opponent: 'KOTSKA 2010', homeTeam: 'XAVIER 2011', awayTeam: 'KOTSKA 2010', venue: 'CANCHA 2', round: 'FECHA 4' },
