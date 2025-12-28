@@ -50,11 +50,11 @@ export const ALL_MATCHES: Match[] = [
     { id: '25', date: '2025-12-22', time: '22:55', opponent: 'XAVIER 2011', homeTeam: 'BORJA 2012', awayTeam: 'XAVIER 2011', venue: 'CANCHA 1', homeScore: 1, awayScore: 4, round: 'FECHA 5' },
 
     // FECHA 6
-    { id: '26', date: '2025-12-26', time: '20:00', opponent: 'LOYOLA 2003', homeTeam: 'BERCHMANS 2008', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 1', round: 'FECHA 6' },
-    { id: '27', date: '2025-12-26', time: '20:45', opponent: 'HURTADO 2009', homeTeam: 'CLAVER 2007', awayTeam: 'HURTADO 2009', venue: 'CANCHA 1', round: 'FECHA 6' },
-    { id: '28', date: '2025-12-26', time: '21:30', opponent: 'KOTSKA 2010', homeTeam: 'GONZAGA 2006', awayTeam: 'KOTSKA 2010', venue: 'CANCHA 1', round: 'FECHA 6' },
-    { id: '29', date: '2025-12-26', time: '22:15', opponent: 'XAVIER 2011', homeTeam: 'ARRUPE 2005', awayTeam: 'XAVIER 2011', venue: 'CANCHA 1', round: 'FECHA 6' },
-    { id: '30', date: '2025-12-26', time: '22:45', opponent: 'BORJA 2012', homeTeam: 'XAVIER 2004', awayTeam: 'BORJA 2012', venue: 'CANCHA 1', round: 'FECHA 6' },
+    { id: '26', date: '2025-12-26', time: '20:00', opponent: 'LOYOLA 2003', homeTeam: 'BERCHMANS 2008', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 1', homeScore: 0, awayScore: 2, round: 'FECHA 6' },
+    { id: '27', date: '2025-12-26', time: '20:45', opponent: 'HURTADO 2009', homeTeam: 'CLAVER 2007', awayTeam: 'HURTADO 2009', venue: 'CANCHA 1', homeScore: 4, awayScore: 2, round: 'FECHA 6' },
+    { id: '28', date: '2025-12-26', time: '21:30', opponent: 'KOTSKA 2010', homeTeam: 'GONZAGA 2006', awayTeam: 'KOTSKA 2010', venue: 'CANCHA 1', homeScore: 2, awayScore: 4, round: 'FECHA 6' },
+    { id: '29', date: '2025-12-26', time: '22:15', opponent: 'XAVIER 2011', homeTeam: 'ARRUPE 2005', awayTeam: 'XAVIER 2011', venue: 'CANCHA 1', homeScore: 2, awayScore: 3, round: 'FECHA 6' },
+    { id: '30', date: '2025-12-26', time: '22:45', opponent: 'BORJA 2012', homeTeam: 'XAVIER 2004', awayTeam: 'BORJA 2012', venue: 'CANCHA 1', homeScore: 6, awayScore: 2, round: 'FECHA 6' },
 
     // FECHA 7
     { id: '31', date: '2025-12-29', time: '20:00', opponent: 'LOYOLA 2003', homeTeam: 'HURTADO 2009', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 2', round: 'FECHA 7' },
