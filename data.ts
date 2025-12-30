@@ -57,11 +57,11 @@ export const ALL_MATCHES: Match[] = [
     { id: '30', date: '2025-12-26', time: '22:45', opponent: 'BORJA 2012', homeTeam: 'XAVIER 2004', awayTeam: 'BORJA 2012', venue: 'CANCHA 1', homeScore: 6, awayScore: 2, round: 'FECHA 6' },
 
     // FECHA 7
-    { id: '31', date: '2025-12-29', time: '20:00', opponent: 'LOYOLA 2003', homeTeam: 'HURTADO 2009', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 2', round: 'FECHA 7' },
-    { id: '32', date: '2025-12-29', time: '20:50', opponent: 'KOTSKA 2010', homeTeam: 'BERCHMANS 2008', awayTeam: 'KOTSKA 2010', venue: 'CANCHA 2', round: 'FECHA 7' },
-    { id: '33', date: '2025-12-29', time: '21:40', opponent: 'XAVIER 2011', homeTeam: 'CLAVER 2007', awayTeam: 'XAVIER 2011', venue: 'CANCHA 2', round: 'FECHA 7' },
-    { id: '34', date: '2025-12-29', time: '22:10', opponent: 'ARRUPE 2005', homeTeam: 'XAVIER 2004', awayTeam: 'ARRUPE 2005', venue: 'CANCHA 2', round: 'FECHA 7' },
-    { id: '35', date: '2025-12-29', time: '22:10', opponent: 'BORJA 2012', homeTeam: 'GONZAGA 2006', awayTeam: 'BORJA 2012', venue: 'CANCHA 1', round: 'FECHA 7' },
+    { id: '31', date: '2025-12-29', time: '20:00', opponent: 'LOYOLA 2003', homeTeam: 'HURTADO 2009', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 2', homeScore: 3, awayScore: 2, round: 'FECHA 7' },
+    { id: '32', date: '2025-12-29', time: '20:50', opponent: 'KOTSKA 2010', homeTeam: 'BERCHMANS 2008', awayTeam: 'KOTSKA 2010', venue: 'CANCHA 2', homeScore: 1, awayScore: 6, round: 'FECHA 7' },
+    { id: '33', date: '2025-12-29', time: '21:40', opponent: 'XAVIER 2011', homeTeam: 'CLAVER 2007', awayTeam: 'XAVIER 2011', venue: 'CANCHA 2', homeScore: 3, awayScore: 1, round: 'FECHA 7' },
+    { id: '34', date: '2025-12-29', time: '22:10', opponent: 'ARRUPE 2005', homeTeam: 'XAVIER 2004', awayTeam: 'ARRUPE 2005', venue: 'CANCHA 2', homeScore: 3, awayScore: 2, round: 'FECHA 7' },
+    { id: '35', date: '2025-12-29', time: '22:10', opponent: 'BORJA 2012', homeTeam: 'GONZAGA 2006', awayTeam: 'BORJA 2012', venue: 'CANCHA 1', homeScore: 4, awayScore: 3, round: 'FECHA 7' },
 
     // FECHA 8
     { id: '36', date: '2026-01-07', time: '19:00', opponent: 'LOYOLA 2003', homeTeam: 'KOTSKA 2010', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 2', round: 'FECHA 8' },
