@@ -11,5 +11,5 @@ export interface Match {
   awayScore?: number;
 }
 
-export type ViewMode = 'standings' | 'fixture' | 'my_matches';
+export type ViewMode = 'standings' | 'fixture' | 'my_matches' | 'simulation';
 export type MyMatchesMode = 'list' | 'calendar';

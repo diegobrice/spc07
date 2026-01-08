@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Calendar as CalendarIcon, List, Trophy, LayoutGrid } from 'lucide-react';
+import { Calendar as CalendarIcon, List, Trophy, LayoutGrid, Calculator } from 'lucide-react';
 import { Match, ViewMode, MyMatchesMode } from './types';
 import { CalendarView } from './components/CalendarView';
 import { ListView } from './components/ListView';
 import { FixtureView } from './components/FixtureView';
 import { StandingsView } from './components/StandingsView';
+import { SimulationView } from './components/SimulationView';
 import { INITIAL_MATCHES, ALL_MATCHES } from './data';
 
 const App: React.FC = () => {
@@ -48,36 +49,46 @@ const App: React.FC = () => {
       <main className="flex-1 max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto w-full px-4 py-6 z-10">
 
         {/* Navigation Switcher */}
-        <div className="bg-dark-800 p-1 rounded-2xl mb-8 flex border border-dark-700 overflow-x-auto">
+        <div className="bg-dark-800 p-1 rounded-2xl mb-8 border border-dark-700 grid grid-cols-2 xs:grid-cols-4 gap-1">
           <button
             onClick={() => setView('standings')}
-            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap ${view === 'standings'
+            className={`flex items-center justify-center gap-2 py-2 px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${view === 'standings'
               ? 'bg-dark-700 text-white shadow-sm'
               : 'text-slate-500 hover:text-slate-300'
               }`}
           >
-            <Trophy className="w-4 h-4" />
+            <Trophy className="w-3 h-3 sm:w-4 sm:h-4" />
             Tabla
           </button>
           <button
             onClick={() => setView('fixture')}
-            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap ${view === 'fixture'
+            className={`flex items-center justify-center gap-2 py-2 px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${view === 'fixture'
               ? 'bg-dark-700 text-white shadow-sm'
               : 'text-slate-500 hover:text-slate-300'
               }`}
           >
-            <LayoutGrid className="w-4 h-4" />
+            <LayoutGrid className="w-3 h-3 sm:w-4 sm:h-4" />
             Fixture
           </button>
           <button
             onClick={() => setView('my_matches')}
-            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap ${view === 'my_matches'
+            className={`flex items-center justify-center gap-2 py-2 px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${view === 'my_matches'
               ? 'bg-dark-700 text-white shadow-sm'
               : 'text-slate-500 hover:text-slate-300'
               }`}
           >
-            <List className="w-4 h-4" />
+            <List className="w-3 h-3 sm:w-4 sm:h-4" />
             Mis partidos
+          </button>
+          <button
+            onClick={() => setView('simulation')}
+            className={`flex items-center justify-center gap-2 py-2 px-2 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${view === 'simulation'
+              ? 'bg-dark-700 text-white shadow-sm'
+              : 'text-slate-500 hover:text-slate-300'
+              }`}
+          >
+            <Calculator className="w-3 h-3 sm:w-4 sm:h-4" />
+            Simulador
           </button>
         </div>
 
@@ -110,6 +121,8 @@ const App: React.FC = () => {
           <StandingsView matches={allMatches} />
         ) : view === 'fixture' ? (
           <FixtureView matches={allMatches} />
+        ) : view === 'simulation' ? (
+          <SimulationView />
         ) : (
           // My Matches View
           myMatchesView === 'calendar' ? (
