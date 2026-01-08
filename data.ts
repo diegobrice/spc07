@@ -19,7 +19,7 @@ export const ALL_MATCHES: Match[] = [
     { id: '2', date: '2025-11-25', time: '20:45', opponent: 'XAVIER 2004', homeTeam: 'XAVIER 2011', awayTeam: 'XAVIER 2004', venue: 'CANCHA 2', homeScore: 1, awayScore: 1, round: 'FECHA 1' },
     { id: '3', date: '2025-11-25', time: '21:30', opponent: 'ARRUPE 2005', homeTeam: 'KOTSKA 2010', awayTeam: 'ARRUPE 2005', venue: 'CANCHA 2', homeScore: 2, awayScore: 3, round: 'FECHA 1' },
     { id: '4', date: '2025-11-25', time: '22:15', opponent: 'GONZAGA 2006', homeTeam: 'HURTADO 2009', awayTeam: 'GONZAGA 2006', venue: 'CANCHA 2', homeScore: 2, awayScore: 0, round: 'FECHA 1' },
-    { id: '5', date: '2025-11-25', time: '22:15', opponent: 'BERCHMANS 2008', homeTeam: 'BERCHMANS 2008', awayTeam: 'CLAVER 2007', venue: 'CANCHA 1', homeScore: 3, awayScore: 2, round: 'FECHA 1' },
+    { id: '5', date: '2025-11-25', time: '22:15', opponent: 'BERCHMANS 2008', homeTeam: 'BERCHMANS 2008', awayTeam: 'CLAVER 2007', venue: 'CANCHA 1', homeScore: 0, awayScore: 3, round: 'FECHA 1' },
 
     // FECHA 2
     { id: '6', date: '2025-12-01', time: '22:40', opponent: 'BERCHMANS 2008', homeTeam: 'HURTADO 2009', awayTeam: 'BERCHMANS 2008', venue: 'CANCHA 1', homeScore: 1, awayScore: 1, round: 'FECHA 2' },
@@ -64,11 +64,11 @@ export const ALL_MATCHES: Match[] = [
     { id: '35', date: '2025-12-29', time: '22:10', opponent: 'BORJA 2012', homeTeam: 'GONZAGA 2006', awayTeam: 'BORJA 2012', venue: 'CANCHA 1', homeScore: 4, awayScore: 3, round: 'FECHA 7' },
 
     // FECHA 8
-    { id: '36', date: '2026-01-07', time: '19:00', opponent: 'LOYOLA 2003', homeTeam: 'KOTSKA 2010', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 2', round: 'FECHA 8' },
-    { id: '37', date: '2026-01-07', time: '19:45', opponent: 'ARRUPE 2005', homeTeam: 'GONZAGA 2006', awayTeam: 'ARRUPE 2005', venue: 'CANCHA 2', round: 'FECHA 8' },
-    { id: '38', date: '2026-01-07', time: '20:30', opponent: 'BORJA 2012', homeTeam: 'BERCHMANS 2008', awayTeam: 'BORJA 2012', venue: 'CANCHA 2', round: 'FECHA 8' },
-    { id: '39', date: '2026-01-07', time: '21:15', opponent: 'XAVIER 2004', homeTeam: 'CLAVER 2007', awayTeam: 'XAVIER 2004', venue: 'CANCHA 2', round: 'FECHA 8' },
-    { id: '40', date: '2026-01-07', time: '21:15', opponent: 'XAVIER 2011', homeTeam: 'HURTADO 2009', awayTeam: 'XAVIER 2011', venue: 'CANCHA 1', round: 'FECHA 8' },
+    { id: '36', date: '2026-01-07', time: '19:00', opponent: 'LOYOLA 2003', homeTeam: 'KOTSKA 2010', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 2', homeScore: 15, awayScore: 0, round: 'FECHA 8' },
+    { id: '37', date: '2026-01-07', time: '19:45', opponent: 'ARRUPE 2005', homeTeam: 'GONZAGA 2006', awayTeam: 'ARRUPE 2005', venue: 'CANCHA 2', homeScore: 3, awayScore: 3, round: 'FECHA 8' },
+    { id: '38', date: '2026-01-07', time: '20:30', opponent: 'BORJA 2012', homeTeam: 'BERCHMANS 2008', awayTeam: 'BORJA 2012', venue: 'CANCHA 2', homeScore: 0, awayScore: 2, round: 'FECHA 8' },
+    { id: '39', date: '2026-01-07', time: '21:15', opponent: 'XAVIER 2004', homeTeam: 'CLAVER 2007', awayTeam: 'XAVIER 2004', venue: 'CANCHA 2', homeScore: 4, awayScore: 0, round: 'FECHA 8' },
+    { id: '40', date: '2026-01-07', time: '21:15', opponent: 'XAVIER 2011', homeTeam: 'HURTADO 2009', awayTeam: 'XAVIER 2011', venue: 'CANCHA 1', homeScore: 2, awayScore: 3, round: 'FECHA 8' },
 
     // FECHA 9
     { id: '41', date: '2026-01-12', time: '19:00', opponent: 'LOYOLA 2003', homeTeam: 'XAVIER 2011', awayTeam: 'LOYOLA 2003', venue: 'CANCHA 2', round: 'FECHA 9' },

@@ -79,6 +79,11 @@ export const StandingsView: React.FC<StandingsViewProps> = ({ matches }) => {
             }
         });
 
+        // BONIFICACION INAUGURACION
+        if (stats['CLAVER 2007']) {
+            stats['CLAVER 2007'].points += 1;
+        }
+
         return Object.values(stats)
             .filter(team => team.name !== 'POR DEFINIR')
             .sort((a, b) => {
